@@ -1,7 +1,8 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  ssr: false,
   server: {
-    port: 5000, //default: 3000
+    port: 8000, //default: 3000
     host: "0.0.0.0", // default: localhost
   },
   head: {
@@ -28,7 +29,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  buildModules: ["nuxt-windicss"],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
