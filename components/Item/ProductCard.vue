@@ -13,7 +13,7 @@
           <h3 class="text-sm text-gray-700 font-normal">
             {{ item.title }}
           </h3>
-          <p class="text-sm font-semibold text-gray-900">
+          <p class="text-md font-semibold text-red-800">
             {{ formatPrice(item.price) }} USD
           </p>
         </div>

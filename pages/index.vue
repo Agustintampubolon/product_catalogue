@@ -25,8 +25,18 @@
     </div>
 
     <div class="container mx-auto px-8 py-16">
+      <div class="card">
+        <div class="card-body">
+          <div class="flex items-center justify-between mb-6">
+            <p class="category text-2xl font-semibold text-uppercase">
+              Kategori
+            </p>
+          </div>
+        </div>
+      </div>
+      <br />
       <div class="flex items-center justify-between mb-6">
-        <p class="text-2xl font-semibold text-gray-700">Featured</p>
+        <p class="featured text-2xl font-semibold text-uppercase">Featured</p>
         <nuxt-link class="text-ui-dark flex items-center" to="/products">
           <span class="mr-2 text-ui-dark">Browse all products</span>
           <svg
@@ -84,5 +94,15 @@ export default {
 .btn-ui {
   @apply py-2 px-4 bg-ui-dark text-white text-sm font-medium rounded-md shadow;
   @apply focus:outline-none focus:ring-2 focus:ring-ui-dark focus:ring-opacity-75 disabled:bg-ui-medium;
+}
+
+.category {
+  font-size: 20px;
+  color: #8b0000;
+}
+
+.featured {
+  font-size: 30px;
+  color: #8b0000;
 }
 </style>
