@@ -8,7 +8,20 @@
               <div class="hidden lg:flex flex-col items-center mr-4">
                 <div
                   class="w-auto h-full object-center object-cover px-4 space-y-4"
-                ></div>
+                >
+                  <img
+                    alt=""
+                    width="150"
+                    :src="product.image"
+                    class="cursor-pointer"
+                  />
+                  <img
+                    alt=""
+                    width="150"
+                    :src="product.image"
+                    class="cursor-pointer"
+                  />
+                </div>
               </div>
 
               <div

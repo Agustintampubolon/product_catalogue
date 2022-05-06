@@ -47,6 +47,13 @@ export default {
     };
   },
 
+  beforeMount() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start();
+      setTimeout(() => this.$nuxt.$loading.finish(), 2000);
+    });
+  },
+
   async fetch() {
     try {
       const response = await this.$axios.get(

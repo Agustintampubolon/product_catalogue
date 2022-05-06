@@ -34,6 +34,8 @@ export default {
     ],
   },
 
+  loading: "~/components/Loader.vue",
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
