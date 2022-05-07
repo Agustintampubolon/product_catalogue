@@ -19,7 +19,7 @@
 <script>
 import CategoryCard from "@/components/Item/CategoryCard.vue";
 export default {
-  name: "ProductDetail",
+  name: "ProductCategory",
   components: {
     CategoryCard,
   },
@@ -66,10 +66,9 @@ export default {
       console.log(err);
     }
   },
-  methods: {
-    formatPrice(value) {
-      let val = (value / 1).toFixed(2).replace(".", ",");
-      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  filters: {
+    formatPrice(price) {
+      return `$${price}`;
     },
   },
 };

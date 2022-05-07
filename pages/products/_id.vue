@@ -44,7 +44,7 @@
             </p>
             <hr />
             <p v-if="product.price" class="price text-lg mt-2 mb-4">
-              {{ formatPrice(product.price) }} USD
+              {{ product.price | formatPrice }}
             </p>
             <p v-else>10 USD</p>
             <p class="font-light" style="text-align: justify !important">
@@ -104,10 +104,9 @@ export default {
       console.log(err);
     }
   },
-  methods: {
-    formatPrice(value) {
-      let val = (value / 1).toFixed(2).replace(".", ",");
-      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  filters: {
+    formatPrice(price) {
+      return `$${price}`;
     },
   },
 };

@@ -14,7 +14,7 @@
             {{ kategori.title }}
           </h3>
           <p class="text-md font-semibold text-red-800">
-            {{ formatPrice(kategori.price) }} USD
+            {{ kategori.price | formatPrice }}
           </p>
         </div>
       </div>
@@ -30,10 +30,10 @@ export default {
       type: Object,
     },
   },
-  methods: {
-    formatPrice(value) {
-      let val = (value / 1).toFixed(2).replace(".", ",");
-      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+  filters: {
+    formatPrice(price) {
+      return `$${price}`;
     },
   },
 };

@@ -22,7 +22,7 @@ export default {
   components: {
     CategoryCard,
   },
-  name: "CategoriesIndex",
+  name: "CategoryIndex",
   data() {
     return {
       categories: [

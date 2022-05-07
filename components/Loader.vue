@@ -1,7 +1,8 @@
 <template>
   <div v-if="showHideSpinner" class="splash-screen">
     <div class="spinner-wrapper">
-      <div class="spinner"></div>
+      <div class="cube1"></div>
+      <div class="cube2"></div>
     </div>
   </div>
 </template>
@@ -30,7 +31,7 @@ export default {
 </script>
 <style scoped>
 .splash-screen {
-  background: #f2f0ee;
+  background: #e8e8e8;
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -45,36 +46,67 @@ export default {
   transform: translate(-50%, -50%);
 }
 .spinner {
-  width: 80px;
-  height: 80px;
   margin: 100px auto;
-  /* background-color: #e45447; */
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.cube1,
+.cube2 {
   background-color: #8b0000;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
 
-  border-radius: 100%;
-  -webkit-animation: sk-scaleout 1s infinite ease-in-out;
-  animation: sk-scaleout 1s infinite ease-in-out;
+  -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+  animation: sk-cubemove 1.8s infinite ease-in-out;
 }
 
-@-webkit-keyframes sk-scaleout {
-  0% {
-    -webkit-transform: scale(0);
+.cube2 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+@-webkit-keyframes sk-cubemove {
+  25% {
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+  }
+  50% {
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+  }
+  75% {
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg)
+      scale(0.5);
   }
   100% {
-    -webkit-transform: scale(1);
-    opacity: 0;
+    -webkit-transform: rotate(-360deg);
   }
 }
 
-@keyframes sk-scaleout {
-  0% {
-    -webkit-transform: scale(0);
-    transform: scale(0);
+@keyframes sk-cubemove {
+  25% {
+    transform: translateX(42px) rotate(-90deg) scale(0.5);
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+  }
+  50% {
+    transform: translateX(42px) translateY(42px) rotate(-179deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+  }
+  50.1% {
+    transform: translateX(42px) translateY(42px) rotate(-180deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+  }
+  75% {
+    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg)
+      scale(0.5);
   }
   100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 0;
+    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
   }
 }
 </style>
