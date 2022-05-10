@@ -1,14 +1,22 @@
 <template>
   <div class="container mx-auto p-8">
+    <div class="border-b border-ui-medium pb-6 mb-2 md:mb-6 flex items-center">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Mens Cotton Jacket....."
+        v-model="searchQuery"
+      />
+    </div>
     <div
       class="w-full border-b border-ui-medium pb-6 mb-2 lg:mb-6 flex items-center justify-between"
     >
-      <h1 class="font-semibold text-3xl">All Products</h1>
+      <h1 class="font-semibold text-3xl">Products</h1>
     </div>
 
-    <div class="grid grid-cols-4 gap-8">
+    <div class="grid grid-cols-4 gap-3">
       <ProductCard
-        v-for="product in products"
+        v-for="product in filterProducts"
         :key="product.id"
         :item="product"
       />
@@ -25,6 +33,8 @@ export default {
   name: "ProductsIndex",
   data() {
     return {
+      searchQuery: "",
+
       products: [],
     };
   },
@@ -45,6 +55,20 @@ export default {
     } catch (err) {
       console.log(err);
     }
+  },
+
+  computed: {
+    filterProducts() {
+      if (this.searchQuery != "" && this.searchQuery) {
+        return this.products.filter((products) => {
+          return products.title
+            .toUpperCase()
+            .includes(this.searchQuery.toUpperCase());
+        });
+      } else {
+        return this.products;
+      }
+    },
   },
 };
 </script>

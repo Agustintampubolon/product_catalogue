@@ -29,10 +29,10 @@
         <div class="card-body">
           <div class="flex items-center justify-between mb-6">
             <p class="category text-2xl font-semibold text-uppercase">
-              Kategori
+              Category
             </p>
           </div>
-          <div class="grid grid-cols-4 gap-8">
+          <div class="grid grid-cols-4 gap-10">
             <CategoriesCard
               v-for="(kategori, i) in categories"
               :key="i"
@@ -44,7 +44,7 @@
       <br />
       <div class="card">
         <div class="card-body">
-          <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center justify-between mb-2">
             <p class="featured text-2xl font-semibold text-uppercase">
               Featured
             </p>
@@ -64,14 +64,14 @@
               </svg>
             </nuxt-link>
           </div>
-          <div class="grid grid-cols-4 gap-8">
-            <ProductCard
-              v-for="product in products"
-              :key="product.id"
-              :item="product"
-            />
-          </div>
         </div>
+      </div>
+      <div class="mt-2 grid grid-cols-4 gap-3">
+        <ProductCard
+          v-for="product in products"
+          :key="product.id"
+          :item="product"
+        />
       </div>
     </div>
   </div>
@@ -110,7 +110,7 @@ export default {
       );
 
       return {
-        products: responseProduct.data.splice(0, 4),
+        products: responseProduct.data.splice(0, 8),
         categories: responseCategories.data,
       };
     } catch (err) {
@@ -121,6 +121,12 @@ export default {
 </script>
 
 <style>
+/* html,
+body {
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+} */
+
 .btn-ui {
   @apply py-2 px-4 bg-ui-dark text-white text-sm font-medium rounded-md shadow;
   @apply focus:outline-none focus:ring-2 focus:ring-ui-dark focus:ring-opacity-75 disabled:bg-ui-medium;

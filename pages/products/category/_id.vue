@@ -6,7 +6,7 @@
       <h1 class="font-semibold text-3xl">Category Product</h1>
     </div>
 
-    <div class="grid grid-cols-4 gap-8">
+    <div class="grid grid-cols-4 gap-3">
       <CategoryCard
         v-for="kategori in category"
         :key="kategori.id"
