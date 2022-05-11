@@ -9,7 +9,7 @@ export default {
   target: "static",
 
   head: {
-    title: "Project Catalogue",
+    title: "Product Catalogue",
     htmlAttrs: {
       lang: "en",
     },
