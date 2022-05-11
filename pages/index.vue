@@ -16,15 +16,16 @@
           <p class="mt-2 text-lg font-normal">
             Men's Clothing, Jewelery, Electronics, Women's Clothing
           </p>
-          <br />
-          <a href="/products" class="btn-ui mt-4 min-w-full lg:min-w-0"
-            >Learn more
+          <a href="/products" class="href">
+            <button class="btn-ui mt-4 min-w-full lg:min-w-0">
+              Learn more
+            </button>
           </a>
         </div>
       </div>
     </div>
 
-    <div class="container mx-auto px-8 py-16">
+    <div v-if="products.length" class="container mx-auto px-8 py-16">
       <div class="card">
         <div class="card-body">
           <div class="flex items-center justify-between mb-6">
@@ -32,7 +33,9 @@
               Category
             </p>
           </div>
-          <div class="grid grid-cols-4 gap-10">
+          <div
+            class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
+          >
             <CategoriesCard
               v-for="(kategori, i) in categories"
               :key="i"
@@ -44,7 +47,7 @@
       <br />
       <div class="card">
         <div class="card-body">
-          <div class="flex items-center justify-between mb-2">
+          <div class="flex items-center justify-between mb-6">
             <p class="featured text-2xl font-semibold text-uppercase">
               Featured
             </p>
@@ -66,7 +69,9 @@
           </div>
         </div>
       </div>
-      <div class="mt-2 grid grid-cols-4 gap-3">
+      <div
+        class="mt-2 grid grid-cols-1 gap-y-5 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-3"
+      >
         <ProductCard
           v-for="product in products"
           :key="product.id"
@@ -138,7 +143,7 @@ body {
 }
 
 .featured {
-  font-size: 30px;
+  font-size: 20px;
   color: #8b0000;
 }
 </style>

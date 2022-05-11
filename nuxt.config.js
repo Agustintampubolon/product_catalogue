@@ -49,9 +49,26 @@ export default {
   buildModules: ["nuxt-windicss"],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxtjs/axios"],
+  modules: ["@nuxtjs/axios", "@nuxtjs/pwa"],
 
   axios: { baseURL: "https://fakestoreapi.com/" },
+
+  pwa: {
+    meta: {
+      title: "Prolog",
+      author: "Me",
+    },
+    manifest: {
+      name: "Product Catalogue",
+      short_name: "PWA Catalogue",
+      lang: "en",
+      display: "standalone",
+    },
+    icon: {
+      source: "static/logo-fix.png",
+      filename: "logo-fix.png",
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

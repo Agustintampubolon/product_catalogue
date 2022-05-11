@@ -8,7 +8,11 @@
               class="w-full min-h-auto bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none"
             >
               <div class="w-auto h-full object-center object-cover bg-gray-100">
-                <img alt="" :src="item.image" />
+                <img
+                  alt=""
+                  :src="item.image"
+                  style="max-width: 100%; display: block; position: static"
+                />
               </div>
             </div>
             <div class="pb-2 pt-2">

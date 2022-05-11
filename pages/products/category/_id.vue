@@ -3,10 +3,12 @@
     <div
       class="w-full border-b border-ui-medium pb-6 mb-2 lg:mb-6 flex items-center justify-between"
     >
-      <h1 class="font-semibold text-3xl">Category Product</h1>
+      <h1 class="font-semibold text-3xl">Products</h1>
     </div>
 
-    <div class="grid grid-cols-4 gap-3">
+    <div
+      class="mt-2 grid grid-cols-1 gap-y-5 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-3"
+    >
       <CategoryCard
         v-for="kategori in category"
         :key="kategori.id"

@@ -14,6 +14,7 @@
                     width="150"
                     :src="product.image"
                     class="cursor-pointer"
+                    @click="imageToShow = product.image"
                     style="transform: rotateY(180deg)"
                   />
                   <img
@@ -26,10 +27,20 @@
               </div>
 
               <div
-                class="h-auto w-full flex-1 flex flex-col rounded-lg overflow-hidden"
+                class="relative h-auto w-full flex-1 flex flex-col rounded-lg overflow-hidden"
               >
                 <div class="w-auto h-full">
-                  <img alt="" :src="product.image" class="w-full" />
+                  <div v-if="product.image === imageToShow">
+                    <img
+                      alt=""
+                      :src="product.image"
+                      class="w-full"
+                      style="transform: rotateY(180deg)"
+                    />
+                  </div>
+                  <div v-else>
+                    <img alt="" :src="product.image" class="w-full" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -67,6 +78,7 @@
       </div>
     </div>
     <br />
+    <br />
     <div class="flex items-center justify-between mb-2">
       <p class="text-md text-muted font-semibold text-uppercase">
         You Might Also Like
@@ -87,7 +99,9 @@
         </svg>
       </nuxt-link>
     </div>
-    <div class="mt-2 grid grid-cols-4 gap-4">
+    <div
+      class="mt-2 grid grid-cols-1 gap-y-5 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-3"
+    >
       <ProductCard
         v-for="product in productFeatured"
         :key="product.id"
@@ -106,7 +120,7 @@ export default {
   name: "ProductDetail",
   data() {
     return {
-      imageToShow: "default_image",
+      imageToShow: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
 
       productFeatured: [],
 

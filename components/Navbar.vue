@@ -6,16 +6,10 @@
       >
         <div class="flex items-center">
           <logo />
-          <div class="hidden lg:flex lg:items-center">
+          <div class="mx-2 lg:flex lg:items-center">
             <div
-              class="hidden flex-grow items-center justify-center lg:flex text-sm font-medium"
+              class="flex-grow items-center justify-center lg:flex text-sm font-medium"
             >
-              <!-- <nuxt-link
-                to="/"
-                class="block mt-4 mr-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-gray-600 last:mr-0"
-              >
-                Home
-              </nuxt-link> -->
               <nuxt-link
                 to="/products"
                 class="block mt-4 mr-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-gray-600 last:mr-0"

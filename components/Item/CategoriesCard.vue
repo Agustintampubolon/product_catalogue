@@ -5,7 +5,7 @@
         <div
           class="w-full min-h-auto bg-orange-600 rounded-md overflow-hidden group-hover:opacity-90 lg:h-20 lg:aspect-none"
         >
-          <div class="mt-4">
+          <div class="mt-4 mb-4">
             <p
               class="text-md text-center text-uppercase font-semibold text-gray-800"
             >

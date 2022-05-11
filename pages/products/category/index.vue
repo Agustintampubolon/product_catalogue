@@ -6,7 +6,9 @@
       <h1 class="font-semibold text-3xl">All Category</h1>
     </div>
 
-    <div class="grid grid-cols-4 gap-3">
+    <div
+      class="mt-2 grid grid-cols-1 gap-y-5 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-3"
+    >
       <CategoryCard
         v-for="(kategori, i) in categories"
         :key="i"
